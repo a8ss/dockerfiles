@@ -20,8 +20,7 @@ ENV PHPIZE_DEPS \
 		re2c
 
 # persistent / runtime deps
-RUN sed -i 's/^http:\/\/dl-cdn\.alpinelinux\.org\//https:\/\/mirrors\.aliyun\.com\//' /etc/apk/repositories \
-    && apk add --no-cache --virtual .persistent-deps \
+RUN apk add --no-cache --virtual .persistent-deps \
 		ca-certificates \
 		curl \
 		tar \
