@@ -218,6 +218,7 @@ RUN set -ex \
 	} | tee php-fpm.d/zz-docker.conf \
 	&& cp php/php.ini-production php/php.ini \
 	&& sed -i 's/expose_php\ =\ On/expose_php\ =\ Off/' php/php.ini \
+	&& sed -i 's/\;date\.timezone\ =/date\.timezone\ = PRC/' php/php.ini \
 	&& { \
         echo 'zend_extension=opcache.so'; \
 	} | tee -a php/php.ini
